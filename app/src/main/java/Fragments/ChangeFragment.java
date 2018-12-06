@@ -15,8 +15,7 @@ public class ChangeFragment {
         this.cxt = cxt;
     }
 
-    public void change(Enum fragmentIsmı, IFragmentFabrikasi fragmentFabrikasi) {
-        Fragment fragment = fragmentFabrikasi.getInstance(fragmentIsmı);
+    public void change(Enum fragmentIsmı, Fragment fragment) {
         ((FragmentActivity) cxt).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(fragmentIsmı.name())
@@ -25,6 +24,16 @@ public class ChangeFragment {
 
 
         Toast.makeText(cxt, ":" + fragmentIsmı.name(), Toast.LENGTH_SHORT).show();
+        cxt = null;
+    }
+
+    //stack e atmaz
+    public void change(Fragment fragment) {
+        ((FragmentActivity) cxt).getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
+
         cxt = null;
     }
 }

@@ -3,6 +3,7 @@ package com.example.hasan.fragments_with_navigator;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import Fragments.ChangeFragment;
 import Fragments.F_Menu_Enum;
+import Fragments.Frond_Fragment;
 import Fragments.SplashFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -49,14 +51,13 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        changeFragment = new ChangeFragment(MainActivity.this);
-        changeFragment.change(F_Menu_Enum.SplashFragment, new SplashFragment());
-
         Toast.makeText(this, "Create Calisti", Toast.LENGTH_SHORT).show();
-
-
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (fragment == null) {
+            changeFragment = new ChangeFragment(MainActivity.this);
+            changeFragment.change(new SplashFragment());
+        }
     }
-
 
     @Override
     protected void onResume() {
@@ -70,8 +71,17 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+            return;
+        }
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (fragment != null) {
+            if (fragment instanceof Frond_Fragment) {
+                Toast.makeText(this, "Ön Taraftasın", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Ön Tarafta Degilsin", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            super.onBackPressed();
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
     }
 
