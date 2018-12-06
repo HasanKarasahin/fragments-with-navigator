@@ -9,11 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public class Frond_Fragment extends Fragment implements View.OnClickListener {
+public abstract class Frond_Fragment extends Fragment implements View.OnClickListener {
     private ChangeFragment changeFragment;
 
 
@@ -65,7 +64,7 @@ public class Frond_Fragment extends Fragment implements View.OnClickListener {
                 changeFragment(new LoginFragment());
                 break;
             case R.id.tvLogin:
-                Toast.makeText(getContext(), "Burada İslemler Yapılacak", Toast.LENGTH_SHORT).show();
+                changeFragment(new HomeFragment());
                 break;
         }
     }

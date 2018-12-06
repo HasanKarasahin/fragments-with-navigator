@@ -11,4 +11,7 @@
     <string name="splash_fragment">Splash Fragment</string>
     <string name="mode_fragment">Mode Fragment</string>
     <string name="login_fragment">Login Fragment</string>
+
+    <string name="home_fragment">Home Fragment</string>
+
 </resources>
