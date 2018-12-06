@@ -12,9 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import Fragments.ChangeFragment;
+import Fragments.F_Menu_Enum;
+import Fragments.SplashFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ChangeFragment changeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,22 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        changeFragment = new ChangeFragment(MainActivity.this);
+        changeFragment.change(F_Menu_Enum.SplashFragment, new SplashFragment());
+
+        Toast.makeText(this, "Create Calisti", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Toast.makeText(this, "Resume Calisti", Toast.LENGTH_SHORT).show();
     }
 
     @Override

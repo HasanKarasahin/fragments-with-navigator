@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements IFragmentFabrikasi {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,5 +20,10 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false);
+    }
+
+    @Override
+    public Fragment getInstance(Enum fragmentAdi) {
+        return this;
     }
 }
