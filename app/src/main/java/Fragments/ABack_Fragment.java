@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public abstract class ABack_Fragment extends Fragment {
+public abstract class ABack_Fragment extends Fragment implements View.OnClickListener {
 
     public void config(Activity activity) {
         appBarShow(activity);
@@ -37,5 +37,11 @@ public abstract class ABack_Fragment extends Fragment {
     private void showDrawer() {
         DrawerLayout drawer = getActivity().findViewById(R.id.drawer_layout);
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNDEFINED);
+    }
+
+
+    public void changeFragment(Fragments fragments) {
+        ChangeFragment changeFragment = new ChangeFragment(getActivity());
+        changeFragment.replace_fragment(fragments);
     }
 }

@@ -22,4 +22,9 @@ class BackHomeFragment extends ABack_Fragment {
         config(getActivity());
         return inflater.inflate(R.layout.fragment_back_home, container, false);
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

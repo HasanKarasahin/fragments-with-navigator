@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
                 fragments = Fragments.Back_Home;
                 break;
         }
-        changeFragment.replace_fragment(fragments,MainActivity.this);
+        changeFragment.replace_fragment(fragments, MainActivity.this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

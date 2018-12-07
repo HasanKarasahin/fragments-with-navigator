@@ -64,6 +64,9 @@ public class ChangeFragment {
             case Back_Slideshow:
                 fragment = new BackSlideshowFragment();
                 break;
+            case Back_Inner_Gallery:
+                fragment = new BackInnerGalleryDetailFragment();
+                break;
             default:
                 fragment = new FrondSplashFragment();
                 break;

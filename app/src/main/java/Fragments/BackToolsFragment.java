@@ -22,4 +22,9 @@ class BackToolsFragment extends ABack_Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_back_tools, container, false);
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

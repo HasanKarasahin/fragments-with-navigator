@@ -7,6 +7,7 @@ public enum Fragments {
     Back_Home,
     Back_Import,
     Back_Gallery,
+    Back_Inner_Gallery,
     Back_Slideshow,
     Back_Tools
 }

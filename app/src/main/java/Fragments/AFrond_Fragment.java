@@ -13,8 +13,6 @@ import android.view.WindowManager;
 import com.example.hasan.fragments_with_navigator.R;
 
 public abstract class AFrond_Fragment extends Fragment implements View.OnClickListener {
-    private ChangeFragment changeFragment;
-
 
     public void config(Activity activity) {
         fullScreen(activity);
@@ -26,7 +24,7 @@ public abstract class AFrond_Fragment extends Fragment implements View.OnClickLi
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        //toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+        //toolbar.setNavigationIcon(R.drawable.ic_arrow_white_black_24dp);
         //setHasOptionsMenu(true);
         //toolbar.setVisibility(View.INVISIBLE);
 
@@ -50,7 +48,7 @@ public abstract class AFrond_Fragment extends Fragment implements View.OnClickLi
     }
 
     public void changeFragment(Fragments fragments) {
-        changeFragment = new ChangeFragment(getActivity());
+        ChangeFragment changeFragment = new ChangeFragment(getActivity());
         changeFragment.replace_fragment(fragments);
     }
 
