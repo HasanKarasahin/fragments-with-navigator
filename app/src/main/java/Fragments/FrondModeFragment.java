@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public class FrondModeFragment extends Frond_Fragment {
+public class FrondModeFragment extends AFrond_Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

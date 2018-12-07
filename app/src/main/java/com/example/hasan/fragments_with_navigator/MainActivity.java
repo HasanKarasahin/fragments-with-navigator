@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import Fragments.ChangeFragment;
-import Fragments.Frond_Fragment;
+import Fragments.AFrond_Fragment;
 import Fragments.FrondSplashFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         }
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (fragment != null) {
-            if (fragment instanceof Frond_Fragment) {
+            if (fragment instanceof AFrond_Fragment) {
                 Toast.makeText(this, "Ön Taraftasın", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Ön Tarafta Degilsin", Toast.LENGTH_SHORT).show();

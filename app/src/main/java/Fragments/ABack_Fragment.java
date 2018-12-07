@@ -8,11 +8,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public abstract class Back_Fragment extends Fragment {
+public abstract class ABack_Fragment extends Fragment {
 
     public void config(Activity activity) {
         appBarShow(activity);
