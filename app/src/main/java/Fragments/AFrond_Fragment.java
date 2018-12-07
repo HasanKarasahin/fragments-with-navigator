@@ -49,22 +49,22 @@ public abstract class AFrond_Fragment extends Fragment implements View.OnClickLi
         fab.setVisibility(View.GONE);
     }
 
-    public void changeFragment(Fragment iFragmentFabrikasi) {
+    public void changeFragment(Fragments fragments) {
         changeFragment = new ChangeFragment(getActivity());
-        changeFragment.change(iFragmentFabrikasi);
+        changeFragment.replace_fragment(fragments);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvSplash:
-                changeFragment(new FrondModeFragment());
+                changeFragment(Fragments.Frond_Mode);
                 break;
             case R.id.tvMode:
-                changeFragment(new FrondLoginFragment());
+                changeFragment(Fragments.Frond_Login);
                 break;
             case R.id.tvLogin:
-                changeFragment(new BackHomeFragment());
+                changeFragment(Fragments.Back_Home);
                 break;
         }
     }

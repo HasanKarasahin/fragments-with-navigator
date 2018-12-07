@@ -1,5 +1,6 @@
 package Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,8 @@ import android.view.ViewGroup;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public class BackHomeFragment extends ABack_Fragment {
+@SuppressLint("ValidFragment")
+class BackHomeFragment extends ABack_Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

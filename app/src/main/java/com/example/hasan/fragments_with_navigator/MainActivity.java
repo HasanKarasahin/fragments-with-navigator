@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import Fragments.ChangeFragment;
 import Fragments.AFrond_Fragment;
-import Fragments.FrondSplashFragment;
+import Fragments.Fragments;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,12 +49,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        changeFragment = new ChangeFragment(MainActivity.this);
 
         Toast.makeText(this, "Create Calisti", Toast.LENGTH_SHORT).show();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (fragment == null) {
-            changeFragment = new ChangeFragment(MainActivity.this);
-            changeFragment.change(new FrondSplashFragment());
+            changeFragment.replace_fragment(Fragments.Frond_Splash);
         }
     }
 
@@ -109,22 +109,28 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        Fragments fragments;
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                fragments = Fragments.Back_Home;
+                break;
+            case R.id.nav_import:
+                fragments = Fragments.Back_Import;
+                break;
+            case R.id.nav_gallery:
+                fragments = Fragments.Back_Gallery;
+                break;
+            case R.id.nav_slideshow:
+                fragments = Fragments.Back_Slideshow;
+                break;
+            case R.id.nav_tools:
+                fragments = Fragments.Back_Tools;
+                break;
+            default:
+                fragments = Fragments.Back_Home;
+                break;
         }
+        changeFragment.replace_fragment(fragments,MainActivity.this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

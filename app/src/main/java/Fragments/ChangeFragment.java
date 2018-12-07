@@ -15,7 +15,7 @@ public class ChangeFragment {
         this.cxt = cxt;
     }
 
-    public void change(Enum fragmentIsmı, Fragment fragment) {
+    private void change(Enum fragmentIsmı, Fragment fragment) {
         ((FragmentActivity) cxt).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(fragmentIsmı.name())
@@ -28,12 +28,51 @@ public class ChangeFragment {
     }
 
     //stack e atmaz
-    public void change(Fragment fragment) {
+    private void change(Fragment fragment) {
         ((FragmentActivity) cxt).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
 
         cxt = null;
+    }
+
+    public void replace_fragment(Fragments fragments) {
+        Fragment fragment;
+        switch (fragments) {
+            case Frond_Splash:
+                fragment = new FrondSplashFragment();
+                break;
+            case Frond_Mode:
+                fragment = new FrondModeFragment();
+                break;
+            case Frond_Login:
+                fragment = new FrondLoginFragment();
+                break;
+            case Back_Home:
+                fragment = new BackHomeFragment();
+                break;
+            case Back_Import:
+                fragment = new BackImportFragment();
+                break;
+            case Back_Tools:
+                fragment = new BackToolsFragment();
+                break;
+            case Back_Gallery:
+                fragment = new BackGalleryFragment();
+                break;
+            case Back_Slideshow:
+                fragment = new BackSlideshowFragment();
+                break;
+            default:
+                fragment = new FrondSplashFragment();
+                break;
+        }
+        change(fragment);
+    }
+
+    public void replace_fragment(Fragments fragments, Context cxt) {
+        this.cxt = cxt;
+        replace_fragment(fragments);
     }
 }
