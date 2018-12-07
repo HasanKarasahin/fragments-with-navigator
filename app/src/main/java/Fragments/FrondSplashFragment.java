@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.hasan.fragments_with_navigator.R;
 
 
-public class SplashFragment extends Frond_Fragment {
+public class FrondSplashFragment extends Frond_Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

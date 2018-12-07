@@ -58,10 +58,10 @@ public abstract class Frond_Fragment extends Fragment implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvSplash:
-                changeFragment(new ModeFragment());
+                changeFragment(new FrondModeFragment());
                 break;
             case R.id.tvMode:
-                changeFragment(new LoginFragment());
+                changeFragment(new FrondLoginFragment());
                 break;
             case R.id.tvLogin:
                 changeFragment(new HomeFragment());

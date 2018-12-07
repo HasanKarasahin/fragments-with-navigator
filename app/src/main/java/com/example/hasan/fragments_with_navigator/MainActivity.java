@@ -16,9 +16,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import Fragments.ChangeFragment;
-import Fragments.F_Menu_Enum;
 import Fragments.Frond_Fragment;
-import Fragments.SplashFragment;
+import Fragments.FrondSplashFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (fragment == null) {
             changeFragment = new ChangeFragment(MainActivity.this);
-            changeFragment.change(new SplashFragment());
+            changeFragment.change(new FrondSplashFragment());
         }
     }
 
