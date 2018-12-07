@@ -13,6 +13,10 @@
     <string name="login_fragment">Login Fragment</string>
 
     <string name="home_fragment">Home Fragment</string>
+    <string name="gallery_fragment">Gallery Fragment</string>
+    <string name="slideshow_fragment">Slideshow Fragment</string>
+    <string name="tools_fragment">Tools Fragment</string>
+    <string name="import_fragment">Import Fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

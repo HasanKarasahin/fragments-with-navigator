@@ -18,6 +18,6 @@ public class BackHomeFragment extends ABack_Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         config(getActivity());
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_back_home, container, false);
     }
 }
