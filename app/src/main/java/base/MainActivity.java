@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.hasan.fragments_with_navigator.R;
 
+import Fragments.BackFragments.BackFragHome;
 import Fragments.ChangeFragment;
 import Fragments.Abstract.AFrondFrag;
 import Fragments.Abstract.ABackInnerFrag;
@@ -71,27 +73,26 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
             return;
         }
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        FragmentManager mng = getSupportFragmentManager();
+        Fragment fragment = mng.findFragmentById(R.id.fragment_container);
         if (fragment != null) {
             if (fragment instanceof AFrondFrag) {
-                Toast.makeText(this, "Ön Taraftasın- Uygulamadan Çık", Toast.LENGTH_SHORT).show();
+                //Uygulamadan Çıkmak ıstedıgıne emın mısın?
             } else if (fragment instanceof ABackInnerFrag) {
-                if (getSupportFragmentManager().getBackStackEntryCount() > 0)
+                if (mng.getBackStackEntryCount() > 0)
                     super.onBackPressed();
-                else
-                    Toast.makeText(this, "YOKK", Toast.LENGTH_SHORT).show();
             } else if (fragment instanceof ABackFrag) {
-                Toast.makeText(this, "ABack", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                if (fragment instanceof BackFragHome) {
+                    //Uygulamadan Çıkmak ıstedıgıne emın mısın?
+                } else {
+                    //BackFragHome fragmentine git.
+                }
             }
-        } else {
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
     }
 
