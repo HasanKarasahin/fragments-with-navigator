@@ -1,20 +1,15 @@
 package Fragments.Abstract;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.hasan.fragments_with_navigator.R;
-
-import Fragments.Fragments;
 
 public abstract class ABack_Inner_Fragment extends Fragment {
 

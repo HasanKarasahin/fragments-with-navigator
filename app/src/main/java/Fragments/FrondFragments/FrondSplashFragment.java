@@ -1,6 +1,5 @@
 package Fragments.FrondFragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import com.example.hasan.fragments_with_navigator.R;
 
 import Fragments.Abstract.AFrond_Fragment;
-import Fragments.Fragments;
 
 
 public class FrondSplashFragment extends AFrond_Fragment {
