@@ -18,9 +18,9 @@ import android.widget.Toast;
 import com.example.hasan.fragments_with_navigator.R;
 
 import Fragments.ChangeFragment;
-import Fragments.Abstract.AFrond_Fragment;
-import Fragments.Abstract.ABack_Inner_Fragment;
-import Fragments.Abstract.ABack_Fragment;
+import Fragments.Abstract.AFrondFrag;
+import Fragments.Abstract.ABackInnerFrag;
+import Fragments.Abstract.ABackFrag;
 import Fragments.Fragments;
 
 public class MainActivity extends AppCompatActivity
@@ -78,14 +78,14 @@ public class MainActivity extends AppCompatActivity
         }
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (fragment != null) {
-            if (fragment instanceof AFrond_Fragment) {
+            if (fragment instanceof AFrondFrag) {
                 Toast.makeText(this, "Ön Taraftasın- Uygulamadan Çık", Toast.LENGTH_SHORT).show();
-            } else if (fragment instanceof ABack_Inner_Fragment) {
+            } else if (fragment instanceof ABackInnerFrag) {
                 if (getSupportFragmentManager().getBackStackEntryCount() > 0)
                     super.onBackPressed();
                 else
                     Toast.makeText(this, "YOKK", Toast.LENGTH_SHORT).show();
-            } else if (fragment instanceof ABack_Fragment) {
+            } else if (fragment instanceof ABackFrag) {
                 Toast.makeText(this, "ABack", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();

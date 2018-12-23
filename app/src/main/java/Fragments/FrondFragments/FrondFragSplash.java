@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-import Fragments.Abstract.AFrond_Fragment;
+import Fragments.Abstract.AFrondFrag;
 
 
-public class FrondModeFragment extends AFrond_Fragment {
+public class FrondFragSplash extends AFrondFrag {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,17 +21,17 @@ public class FrondModeFragment extends AFrond_Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mode, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        config(getActivity());
+        return inflater.inflate(R.layout.fragment_splash, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView tvMode = getActivity().findViewById(R.id.tvMode);
-        tvMode.setOnClickListener(this);
+        TextView tvSplash = getActivity().findViewById(R.id.tvSplash);
+        tvSplash.setOnClickListener(this);
     }
 }

@@ -10,11 +10,11 @@ import android.widget.Button;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-import Fragments.Abstract.ABack_Fragment;
+import Fragments.Abstract.ABackFrag;
 import Fragments.Fragments;
 
 
-public class BackGalleryFragment extends ABack_Fragment {
+public class BackFragGallery extends ABackFrag {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

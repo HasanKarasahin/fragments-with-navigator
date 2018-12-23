@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-import Fragments.Abstract.ABack_Fragment;
+import Fragments.Abstract.ABackFrag;
 
 
-public class BackHomeFragment extends ABack_Fragment {
+public class BackFragSlideshow extends ABackFrag {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +21,7 @@ public class BackHomeFragment extends ABack_Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        config(getActivity());
-        return inflater.inflate(R.layout.fragment_back_home, container, false);
+        return inflater.inflate(R.layout.fragment_back_slideshow, container, false);
     }
 
     @Override

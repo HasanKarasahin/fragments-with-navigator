@@ -15,7 +15,7 @@ import com.example.hasan.fragments_with_navigator.R;
 import Fragments.Fragments;
 import Fragments.ChangeFragment;
 
-public abstract class AFrond_Fragment extends Fragment implements View.OnClickListener {
+public abstract class AFrondFrag extends Fragment implements View.OnClickListener {
 
     public void config(Activity activity) {
         fullScreen(activity);

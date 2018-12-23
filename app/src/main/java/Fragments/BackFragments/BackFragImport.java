@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-import Fragments.Abstract.ABack_Fragment;
+import Fragments.Abstract.ABackFrag;
 
 
-public class BackImportFragment extends ABack_Fragment {
+public class BackFragImport extends ABackFrag {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

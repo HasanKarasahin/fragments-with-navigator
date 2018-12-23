@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-import Fragments.Abstract.AFrond_Fragment;
+import Fragments.Abstract.AFrondFrag;
 
 
-public class FrondLoginFragment extends AFrond_Fragment {
+public class FrondFragLogin extends AFrondFrag {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

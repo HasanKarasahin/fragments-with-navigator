@@ -54,34 +54,34 @@ public class ChangeFragment {
         Fragment fragment;
         switch (fragments) {
             case Frond_Splash:
-                fragment = new FrondSplashFragment();
+                fragment = new FrondFragSplash();
                 break;
             case Frond_Mode:
-                fragment = new FrondModeFragment();
+                fragment = new FrondFragMode();
                 break;
             case Frond_Login:
-                fragment = new FrondLoginFragment();
+                fragment = new FrondFragLogin();
                 break;
             case Back_Home:
-                fragment = new BackHomeFragment();
+                fragment = new BackFragHome();
                 break;
             case Back_Import:
-                fragment = new BackImportFragment();
+                fragment = new BackFragImport();
                 break;
             case Back_Tools:
-                fragment = new BackToolsFragment();
+                fragment = new BackFragTools();
                 break;
             case Back_Gallery:
-                fragment = new BackGalleryFragment();
+                fragment = new BackFragGallery();
                 break;
             case Back_Slideshow:
-                fragment = new BackSlideshowFragment();
+                fragment = new BackFragSlideshow();
                 break;
             case Back_Inner_Gallery:
-                fragment = new BackInnerGalleryDetailFragment();
+                fragment = new BackInFragGalleryDetail();
                 break;
             default:
-                fragment = new FrondSplashFragment();
+                fragment = new FrondFragSplash();
                 break;
         }
         return fragment;

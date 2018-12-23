@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-public abstract class ABack_Inner_Fragment extends Fragment {
+public abstract class ABackInnerFrag extends Fragment {
 
     public void config() {
         hideDrawer();
