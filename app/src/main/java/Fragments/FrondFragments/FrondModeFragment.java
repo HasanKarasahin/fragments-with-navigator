@@ -1,4 +1,4 @@
-package Fragments;
+package Fragments.FrondFragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-@SuppressLint("ValidFragment")
-class FrondModeFragment extends AFrond_Fragment {
+import Fragments.Abstract.AFrond_Fragment;
+
+
+public class FrondModeFragment extends AFrond_Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

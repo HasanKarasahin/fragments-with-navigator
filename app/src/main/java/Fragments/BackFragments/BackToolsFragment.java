@@ -1,6 +1,5 @@
-package Fragments;
+package Fragments.BackFragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +7,9 @@ import android.view.ViewGroup;
 
 import com.example.hasan.fragments_with_navigator.R;
 
-@SuppressLint("ValidFragment")
-class BackToolsFragment extends ABack_Fragment {
+import Fragments.Abstract.ABack_Fragment;
+
+public class BackToolsFragment extends ABack_Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

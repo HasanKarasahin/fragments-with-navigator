@@ -1,4 +1,4 @@
-package Fragments;
+package Fragments.Abstract;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.hasan.fragments_with_navigator.R;
+
+import Fragments.Fragments;
+import Fragments.ChangeFragment;
 
 public abstract class AFrond_Fragment extends Fragment implements View.OnClickListener {
 

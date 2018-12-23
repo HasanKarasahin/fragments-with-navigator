@@ -4,9 +4,12 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.Toast;
 
 import com.example.hasan.fragments_with_navigator.R;
+
+import Fragments.BackFragments.*;
+import Fragments.BackInner.*;
+import Fragments.FrondFragments.*;
 
 public class ChangeFragment {
     Context cxt;
@@ -15,15 +18,12 @@ public class ChangeFragment {
         this.cxt = cxt;
     }
 
-    private void change(Enum fragmentIsmı, Fragment fragment) {
+    private void change_addstack(Fragment fragment) {
         ((FragmentActivity) cxt).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
-                .addToBackStack(fragmentIsmı.name())
+                .addToBackStack(null)
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
-
-
-        Toast.makeText(cxt, ":" + fragmentIsmı.name(), Toast.LENGTH_SHORT).show();
         cxt = null;
     }
 
@@ -38,6 +38,19 @@ public class ChangeFragment {
     }
 
     public void replace_fragment(Fragments fragments) {
+        change(obj(fragments));
+    }
+
+    public void replace_fragment(Fragments fragments, Context cxt) {
+        this.cxt = cxt;
+        replace_fragment(fragments);
+    }
+
+    public void add_fragment(Fragments fragments) {
+        change_addstack(obj(fragments));
+    }
+
+    private Fragment obj(Fragments fragments) {
         Fragment fragment;
         switch (fragments) {
             case Frond_Splash:
@@ -71,11 +84,6 @@ public class ChangeFragment {
                 fragment = new FrondSplashFragment();
                 break;
         }
-        change(fragment);
-    }
-
-    public void replace_fragment(Fragments fragments, Context cxt) {
-        this.cxt = cxt;
-        replace_fragment(fragments);
+        return fragment;
     }
 }

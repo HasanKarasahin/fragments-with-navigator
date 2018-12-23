@@ -1,4 +1,4 @@
-package com.example.hasan.fragments_with_navigator;
+package base;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,8 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.hasan.fragments_with_navigator.R;
+
 import Fragments.ChangeFragment;
-import Fragments.AFrond_Fragment;
+import Fragments.Abstract.AFrond_Fragment;
+import Fragments.Abstract.ABack_Inner_Fragment;
+import Fragments.Abstract.ABack_Fragment;
 import Fragments.Fragments;
 
 public class MainActivity extends AppCompatActivity
@@ -75,9 +79,16 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (fragment != null) {
             if (fragment instanceof AFrond_Fragment) {
-                Toast.makeText(this, "Ön Taraftasın", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Ön Taraftasın- Uygulamadan Çık", Toast.LENGTH_SHORT).show();
+            } else if (fragment instanceof ABack_Inner_Fragment) {
+                if (getSupportFragmentManager().getBackStackEntryCount() > 0)
+                    super.onBackPressed();
+                else
+                    Toast.makeText(this, "YOKK", Toast.LENGTH_SHORT).show();
+            } else if (fragment instanceof ABack_Fragment) {
+                Toast.makeText(this, "ABack", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Ön Tarafta Degilsin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
